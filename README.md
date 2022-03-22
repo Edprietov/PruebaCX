@@ -12,7 +12,7 @@ Esta configurado por defecto para correr en el puerto 8080.
 
 
 ##### Para correr el frontend:
-Se debe ir a la carpeta Backend y ejecutar el siguiente comando
+Se debe ir a la carpeta frontend y ejecutar el siguiente comando
 
 - npm run serve
 
