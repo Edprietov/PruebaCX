@@ -14,13 +14,13 @@
   </thead>
   <tbody>
  <tr v-for="valor in servidorDatos" :key="valor.items">
-          <td>{{ valor.id }}</td>
-          <td>{{ valor.lookupName }}</td>
-          <td>{{ valor.lookupName }}</td>
-          <td>{{ valor.lookupName }}</td>
-          <td>{{ valor.lookupName }}</td>
-          <td>{{ valor.lookupName }}</td>
-          <td>{{ valor.lookupName }}</td>
+          <td>{{ valor[0] }}</td>
+          <td>{{ valor[1] }}</td>
+          <td>{{ valor[2] }}</td>
+          <td>{{ valor[5] }}</td>
+          <td>{{ valor[6] }}</td>
+          <td>{{ valor[3] }}</td>
+          <td>{{ valor[4] }}</td>
         </tr>
   </tbody>
 </table>
@@ -30,7 +30,7 @@
 
 
 <script>
-import Consultar from "@/servicios/ConsultarUsuarios";
+import Consultar from "@/servicios/ConsultarContactos";
 import TheNavBar from "@/components/TheNavBar";
 import Footer from '@/components/Footer.vue'
 
@@ -52,8 +52,8 @@ export default {
       Consultar.ConsultarUsuario()
         .then((respuesta) => {
           if (respuesta.status === 200) {
-            console.log("Respuesta" + JSON.stringify(respuesta));
-            this.servidorDatos = respuesta.data.items;
+            console.log("Respuesta" + JSON.stringify(respuesta.data.items[0].rows));
+            this.servidorDatos = respuesta.data.items[0].rows;
           } else {
             console.log("Error");
           }

@@ -21,8 +21,8 @@ public class ConsultUserController {
 
             RestTemplate restTemplate = new RestTemplate();
             ResponseEntity<String> result = restTemplate.exchange
-                    (Autentication.getURI(), HttpMethod.GET, new HttpEntity(Autentication.createHeaders(Autentication.getUSER(), Autentication.getPASSWORD())), String.class);
-                    System.out.println("Si");
+                    (Autentication.getURIG() + "?query=select id,  name.first, name.last,  address.city, address.country , emails.address, phones.number from contacts", HttpMethod.GET, new HttpEntity(Autentication.createHeaders(Autentication.getUSER(), Autentication.getPASSWORD())), String.class);
+                    System.out.println("Consultar todos");
             return result ;
         }
 

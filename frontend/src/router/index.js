@@ -1,7 +1,7 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
 import TableResults from '../components/TableResults.vue'
-import CreateForm from '../components/CreateUserForm.vue'
+import CreateForm from '../components/CreateContactForm.vue'
 
 const routes = [
   {

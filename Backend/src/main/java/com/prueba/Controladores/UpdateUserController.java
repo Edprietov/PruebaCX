@@ -4,9 +4,13 @@ import com.prueba.herramientas.Autentication;
 import org.springframework.http.HttpEntity;
 import org.springframework.http.HttpMethod;
 import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.PatchMapping;
+import org.springframework.web.bind.annotation.RestController;
 import org.springframework.web.client.RestTemplate;
 
+@CrossOrigin
+@RestController
 public class UpdateUserController {
 
     @PatchMapping ("/actualizar/{id}")

@@ -9,9 +9,9 @@ import java.nio.charset.Charset;
 public class Autentication {
 
     private static String URI = "https://imaginecx--tst2.custhelp.com/services/rest/connect/v1.3/contacts";
+    private static String URI_GET ="https://imaginecx--tst2.custhelp.com/services/rest/connect/v1.3/queryResults/";
     private static String USER = "ICXCandidate";
     private static String PASSWORD =  "Welcome2021";
-
     public static HttpHeaders createHeaders(String username, String password){
         return new HttpHeaders() {{
             String auth = username + ":" + password;
@@ -27,6 +27,9 @@ public class Autentication {
         return URI;
     }
 
+    public static String getURIG() {
+        return URI_GET;
+    }
     public static String getUSER() {
         return USER;
     }
