@@ -1,18 +1,21 @@
 import { createRouter, createWebHistory } from 'vue-router'
-import HomeView from '../views/HomeView.vue'
-import TableResults from '../components/TableResults.vue'
+
+//mport TableResults from '../components/TableResults.vue'
 import CreateForm from '../components/CreateContactForm.vue'
+import FilterTable from '../components/FilterTable.vue'
+import TestPrueba from '../components/TestPrueba.vue'
+
 
 const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    component: TestPrueba
   },
   {
-    path: '/consultar',
-    name: 'consult',
-    component: TableResults
+    path: '/consultarf',
+    name: 'consultf',
+    component: FilterTable
   },
   {
     path: '/crear',

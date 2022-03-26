@@ -21,7 +21,7 @@ public class ConsultUserController {
 
             RestTemplate restTemplate = new RestTemplate();
             ResponseEntity<String> result = restTemplate.exchange
-                    (Autentication.getURIG() + "?query=select id,  name.first, name.last,  address.city, address.country , emails.address, phones.number from contacts", HttpMethod.GET, new HttpEntity(Autentication.createHeaders(Autentication.getUSER(), Autentication.getPASSWORD())), String.class);
+                    (Autentication.getURIG() + "?query=select id,  name.first, name.last,  address.city, address.country,  emails.address, phones.number  from contacts  where emails.address is not null  and phones.phoneType = 1 order by id;", HttpMethod.GET, new HttpEntity(Autentication.createHeaders(Autentication.getUSER(), Autentication.getPASSWORD())), String.class);
                     System.out.println("Consultar todos");
             return result ;
         }

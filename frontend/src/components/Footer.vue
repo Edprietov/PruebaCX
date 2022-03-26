@@ -26,7 +26,6 @@
             </p>
         </div>
     </footer>
-
 </template>
 
 <script>
@@ -40,13 +39,14 @@ export default {
 .footer {
    position: fixed;
    left: 0;
-   bottom: 305;
+   bottom: 0;
    width: 100%;
    background-color: red;
    color: white;
    text-align: center;
+   height: 40px;
 }
 .intro{
-background: -webkit-linear-gradient(left, #3931af, #00c6ff);;
+background: -webkit-linear-gradient(left, #3931af, #00c6ff);
 }
 </style>
