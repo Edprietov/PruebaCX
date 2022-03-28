@@ -23,10 +23,10 @@ public class DeleteUserController {
             return result;
         } catch (RestClientException e) {
             e.printStackTrace();
-            return new ResponseEntity<>("No existe!", HttpStatus.OK);
+            String respuesta= (String) e.getMessage().subSequence(0, e.getMessage().indexOf(":"));
+            return new ResponseEntity<>(respuesta, HttpStatus.valueOf( Integer.parseInt(e.getMessage().substring(0,3))));
         }
 
     }
-
 
 }

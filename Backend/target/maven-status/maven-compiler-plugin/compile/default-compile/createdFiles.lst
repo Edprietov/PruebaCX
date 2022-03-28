@@ -1,8 +1,12 @@
+com\prueba\services\StorageService.class
 com\prueba\herramientas\Autentication.class
-com\prueba\Controladores\CreateContactController.class
 com\prueba\herramientas\Autentication$1.class
 com\prueba\Controladores\ConsultUserController.class
 com\prueba\Controladores\DeleteUserController.class
+com\prueba\Controladores\StorageController.class
+com\prueba\config\StorageConfig.class
+com\prueba\pojo\UpdateResponsePOJO.class
+com\prueba\Controladores\CreateContactController.class
 com\prueba\Application.class
 com\prueba\Controladores\UpdateUserController.class
 com\prueba\pojo\CreateContactPOJO.class
