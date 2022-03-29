@@ -27,10 +27,9 @@ public class ConsultUserController {
 
     @GetMapping("/consultar/{id}")
     private ResponseEntity<String> consultarPorId(@PathVariable String id){
-
         RestTemplate restTemplate = new RestTemplate();
         ResponseEntity<String> result = restTemplate.exchange
-                (Autentication.getURI()+"/"+id, HttpMethod.GET, new HttpEntity(Autentication.createHeaders(Autentication.getUSER(),  Autentication.getPASSWORD())), String.class);
+                (Autentication.getURIG() + "?query=select id,  name.first, name.last,  address.city, address.country,  emails.address, phones.number,   address.street, address.postalCode from contacts  where emails.address is not null and phones.phoneType = 1 and id=" + id, HttpMethod.GET, new HttpEntity(Autentication.createHeaders(Autentication.getUSER(),  Autentication.getPASSWORD())), String.class);
         return result ;
     }
 

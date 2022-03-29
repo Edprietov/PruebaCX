@@ -19,7 +19,6 @@ public class CreateContactController {
     private ResponseEntity<String> crearUsuario(@RequestBody CreateContactPOJO contactPOJO ){
         contactPOJO.setPaisContacto((contactPOJO.getPaisContacto().equals("Colombia"))? "CO" : "US");
         String requestJson = "{\"name\":{\"first\": \""+ contactPOJO.getNombreContacto() + "\",  \"last\":  \""+ contactPOJO.getApellidoContacto() + "\"},\"emails\":{\"address\":\""+ contactPOJO.getCorreoContacto() + "\",\"addressType\":{\"id\":0}} ,\"phones\":{\"number\":\"" +  contactPOJO.getCelularContacto() + "\",\"phoneType\":{\"id\":1}},\"address\":{\"city\":\"" + contactPOJO.getCiudadContacto() + "\",\"postalCode\":\"" + contactPOJO.getCodigoContacto() + "\",\"country\": { \"id\":\"" + contactPOJO.getPaisContacto() + "\"}  ,\"street\":\"" + contactPOJO.getDireccionContacto() +"\"}}";
-
         RestTemplate restTemplate = new RestTemplate();
         HttpEntity<String> entity = new HttpEntity<String>(requestJson, Autentication.createHeaders(Autentication.getUSER(), Autentication.getPASSWORD()));
         ResponseEntity<String> result = restTemplate.exchange
