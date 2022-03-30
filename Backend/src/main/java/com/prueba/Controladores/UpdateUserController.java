@@ -18,7 +18,6 @@ public class UpdateUserController {
         contactPOJO.setPaisContacto((contactPOJO.getPaisContacto().equals("Colombia"))? "CO" : "US");
         String requestJson = "{\"emails\":{\"addressType\":{\"id\":0}} ,\"phones\":{\"number\":\"" +  contactPOJO.getCelularContacto() + "\",\"phoneType\":{\"id\":1}},\"address\":{\"city\":\"" + contactPOJO.getCiudadContacto() + "\",\"postalCode\":\"" + contactPOJO.getCodigoContacto() + "\",\"country\": { \"id\":\"" + contactPOJO.getPaisContacto() + "\"}  ,\"street\":\"" + contactPOJO.getDireccionContacto() +"\"}}";
         RestTemplate restTemplate = new RestTemplate();
-        System.out.println("Si señor " + id + " " + contactPOJO.getPaisContacto() + contactPOJO.getCiudadContacto());
         HttpComponentsClientHttpRequestFactory requestFactory = new HttpComponentsClientHttpRequestFactory();
         requestFactory.setConnectTimeout(5000);
         requestFactory.setReadTimeout(5000);
